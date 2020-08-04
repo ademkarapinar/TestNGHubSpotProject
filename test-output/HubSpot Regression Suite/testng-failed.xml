@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="2" guice-stage="DEVELOPMENT" name="Failed suite [HubSpot Regression Suite]" parallel="tests">
+  <parameter name="browser" value="chrome"/>
+  <listeners>
+    <listener class-name="com.qa.hubspot.listener.ExtentReportListener"/>
+  </listeners>
+  <test thread-count="3" name="HubSpot Functional Regression Test -- firefox" parallel="classes">
+    <parameter name="browser" value="firefox"/>
+    <classes>
+      <class name="com.qa.hubspot.test.LoginPageTest"/>
+      <class name="com.qa.hubspot.test.HomePageTest"/>
+    </classes>
+  </test> <!-- HubSpot Functional Regression Test - firefox -->
+  <test thread-count="3" name="HubSpot Functional Regression Test -- chrome" parallel="classes">
+    <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="com.qa.hubspot.test.LoginPageTest"/>
+      <class name="com.qa.hubspot.test.HomePageTest"/>
+    </classes>
+  </test> <!-- HubSpot Functional Regression Test - chrome -->
+  <test name="HubSpot Functional Regression Test -- firefox(failed)" parallel="classes">
+    <parameter name="browser" value="firefox"/>
+    <classes>
+      <class name="com.qa.hubspot.test.HomePageTest">
+        <methods>
+          <include name="verifyLoggedInUserTest"/>
+          <include name="verifyHomePageHeaderTest"/>
+          <include name="tearDown"/>
+          <include name="tearDown"/>
+          <include name="verifyHomePageTitle"/>
+          <include name="setUp"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- com.qa.hubspot.test.HomePageTest -->
+      <class name="com.qa.hubspot.test.LoginPageTest">
+        <methods>
+          <include name="verifyPageTitleTest"/>
+          <include name="loginTest"/>
+          <include name="setUp"/>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="tearDown"/>
+          <include name="verifySignUpLink"/>
+        </methods>
+      </class> <!-- com.qa.hubspot.test.LoginPageTest -->
+    </classes>
+  </test> <!-- HubSpot Functional Regression Test - firefox(failed) -->
+  <test name="HubSpot Functional Regression Test -- chrome(failed)" parallel="classes">
+    <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="com.qa.hubspot.test.HomePageTest">
+        <methods>
+          <include name="verifyLoggedInUserTest"/>
+          <include name="verifyHomePageHeaderTest"/>
+          <include name="tearDown"/>
+          <include name="tearDown"/>
+          <include name="verifyHomePageTitle"/>
+          <include name="setUp"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- com.qa.hubspot.test.HomePageTest -->
+      <class name="com.qa.hubspot.test.LoginPageTest">
+        <methods>
+          <include name="verifyPageTitleTest"/>
+          <include name="loginTest"/>
+          <include name="setUp"/>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="tearDown"/>
+          <include name="verifySignUpLink"/>
+        </methods>
+      </class> <!-- com.qa.hubspot.test.LoginPageTest -->
+    </classes>
+  </test> <!-- HubSpot Functional Regression Test - chrome(failed) -->
+</suite> <!-- Failed suite [HubSpot Regression Suite] -->

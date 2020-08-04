@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="HubSpot Regression Test Suite">
+   <listeners>
+	<!-- <listener class-name="com.qa.hubspot.listener.ScreenshotListener" /> -->
+	<!-- <listener class-name="com.qa.hubspot.listener.TestAllureListener" /> -->
+    <!-- <listener class-name="com.qa.hubspot.listener.ExtentReportListener" /> -->
+    <listener class-name="com.qa.hubspot.listener.pdflistener" />
+	<!-- <listener class-name="com.qa.hubspot.listener.TesultsListener" /> -->
+	</listeners>
+	
+  <parameter name="browser" value="chrome"/>
+  <test name="HubSpot Fuctional Regression Test">
+ 
+
+    <classes>
+      <class name="com.qa.hubspot.test.LoginPageTest"/>
+      <class name="com.qa.hubspot.test.HomePageTest"/>
+      <class name="com.qa.hubspot.test.ContactsPageTest"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
